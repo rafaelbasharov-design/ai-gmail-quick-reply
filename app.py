@@ -1,20 +1,21 @@
 import os
 from flask import Flask, request, jsonify
 import stripe
+from flask_cors import CORS  # добавляем CORS
 
 app = Flask(__name__)
+CORS(app)  # разрешаем кросс-доменные запросы
 
-# Загружаем ключи из переменных окружения (Render Settings → Environment)
+# Загружаем ключи из переменных окружения
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 PRICE_ID = os.getenv("STRIPE_PRICE_ID")
 
 
 @app.route("/")
 def home():
-    return "✅ Gmail AI Server is running with Stripe integration!"
+    return "✅ Gmail AI Server is running with Stripe integration and CORS enabled!"
 
 
-# Создание Stripe Checkout Session
 @app.route("/create-checkout-session", methods=["POST"])
 def create_checkout_session():
     try:
