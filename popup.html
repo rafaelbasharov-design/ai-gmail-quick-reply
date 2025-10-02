@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gmail AI Quick Reply — Verify</title>
+  <style>
+    body{font-family: Arial, Helvetica, sans-serif; padding:14px; width:320px;}
+    h3{margin:6px 0 12px 0;}
+    input[type="email"]{width:100%; padding:8px; margin-bottom:8px; box-sizing:border-box;}
+    button{padding:8px 12px; background:#1a73e8; color:#fff; border:none; border-radius:6px; cursor:pointer;}
+    #status{margin-top:10px; font-size:0.95em;}
+    a.purchase{display:inline-block; margin-top:10px; color:#1a73e8; text-decoration:none;}
+  </style>
+</head>
+<body>
+  <h3>Verify your subscription</h3>
+  <p>Enter the <strong>email</strong> you used to purchase on Gumroad.</p>
+  <input type="email" id="emailInput" placeholder="your@email.com" />
+  <button id="verifyButton">Verify</button>
+  <div id="status" role="status" aria-live="polite"></div>
+
+  <a id="purchaseLink" class="purchase" target="_blank" rel="noopener">Buy or manage subscription</a>
+
+  <script src="popup.js"></script>
+</body>
+</html>
